@@ -1,8 +1,10 @@
 {
-   "type": "mongodb",
+   "type": "mysql",
    "host": "api.peeradmit.ml",
-   "port": "1000",
-   "database": "personal",
+   "port": 3306,
+   "username": "root",
+   "password": "example",
+   "database": "testdb",
    "synchronize": true,
    "logging": false,
    "entities": [
