@@ -14,7 +14,9 @@ FROM node:15.3.0-alpine3.10 AS prod
 
 WORKDIR /app
 
-RUN npm ci --quiet --only=production && npm install -g pm2
+RUN npm install -g pm2
+
+COPY npm ci --quiet --only=production
 
 COPY --from=builder /usr/src/app/dist ./dist
 
