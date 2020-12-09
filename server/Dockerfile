@@ -14,7 +14,7 @@ FROM node:15.3.0-alpine3.10 AS prod
 
 WORKDIR /app
 
-COPY package*.json ./
+COPY *.json ./
 
 RUN npm ci --quiet --only=production && npm install -g pm2
 
