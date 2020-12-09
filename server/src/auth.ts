@@ -6,13 +6,3 @@ export const createAccessToken = (user: User) => {
     expiresIn: "24h"
   });
 };
-
-export const createRefreshToken = (user: User) => {
-  return sign(
-    { userId: user.id, tokenVersion: user.tokenVersion },
-    process.env.REFRESH_TOKEN_SECRET!,
-    {
-      expiresIn: "7d"
-    }
-  );
-};
