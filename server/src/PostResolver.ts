@@ -1,4 +1,4 @@
-//
+// for types and compilation
 import {Query, Resolver, UseMiddleware, Ctx, Mutation, Arg} from "type-graphql";
 import { MyContext } from "./MyContext";
 
@@ -10,7 +10,7 @@ import { isAuth } from "./isAuth";
 import { User } from "./entity/User";
 import {Post} from "./entity/Post";
 
-
+// functions
 function mysqlDate(){
     /**
      * Function for getting back MySQL timestamps to add to the database
@@ -19,10 +19,14 @@ function mysqlDate(){
     return date.toISOString().split('T')[0];
 }
 
-
+// resolvers
 @Resolver()
 export class PostResolver {
 
+    /**
+     * Resolver to get all posts for a given user
+     * 
+     */
     @Query(() => [Post])
     @UseMiddleware(isAuth)
     async getPosts(@Ctx() { payload }: MyContext) {
@@ -30,6 +34,10 @@ export class PostResolver {
         return postslist
     }
 
+    /**
+     * Resolver to make a post for a given user
+     * 
+     */
 
     @Mutation(() => Boolean)
     @UseMiddleware(isAuth)
@@ -37,8 +45,6 @@ export class PostResolver {
         @Ctx() { payload }: MyContext,
         @Arg("content") content: string
     ) {
-        console.log(content)
-        console.log(payload)
         try {
 
             await Post.insert({
