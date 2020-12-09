@@ -9,7 +9,6 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: long_password_here
       MYSQL_DATABASE: quickdb
-    network_mode: "host"
 
   server1:
     container_name: server1
@@ -17,6 +16,8 @@ services:
       context: ./server
     ports:
       - "4001:4000"
+    links:
+      - "db:database"
     
   server2:
     container_name: server2
@@ -24,9 +25,20 @@ services:
       context: ./server
     ports:
       - "4002:4000"
+    links:
+      - "db:database"
 
   load_balancer:
     restart: always
     build:
       context: ./nginx
     network_mode: "host"
+
+
+   adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 10000:8080
+    links:
+      - "db:database"
