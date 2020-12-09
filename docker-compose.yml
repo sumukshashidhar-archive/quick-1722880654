@@ -39,7 +39,7 @@ services:
     network_mode: "host"
 
 
-   adminer:
+  adminer:
     image: adminer
     restart: always
     ports:
