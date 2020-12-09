@@ -1,5 +1,7 @@
-import {Entity, PrimaryGeneratedColumn, Column, BaseEntity} from "typeorm";
+import {Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany} from "typeorm";
 import {ObjectType, Field, Int} from "type-graphql";
+
+import {Post} from "./Post";
 
 
 @ObjectType()
@@ -20,4 +22,7 @@ export class User extends BaseEntity{
     @Column("int", { default: 0 })
     tokenVersion: number;
 
+
+    @OneToMany(_ => Post, post => post.user)
+    posts: Post[];
 }
