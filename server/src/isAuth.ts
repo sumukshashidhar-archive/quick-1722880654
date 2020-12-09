@@ -2,7 +2,14 @@ import { MiddlewareFn } from "type-graphql";
 import { verify } from "jsonwebtoken";
 import { MyContext } from "./MyContext";
 
-// bearer 102930ajslkdaoq01
+
+/**
+ * The token needs to be passed like
+ * {
+ *    "authorization": "Bearer asdfasdfasdfasdf"
+ * }
+ * 
+ */
 
 export const isAuth: MiddlewareFn<MyContext> = ({ context }, next) => {
   const authorization = context.req.headers["authorization"];
