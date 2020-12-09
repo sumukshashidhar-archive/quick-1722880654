@@ -1,3 +1,4 @@
+// types for graphql
 import {
   Resolver,
   Query,
@@ -5,19 +6,16 @@ import {
   Arg,
   ObjectType,
   Field,
-  Ctx,
-  UseMiddleware,
-  Int
 } from "type-graphql";
+// bcrypt to hash passwords
 import { hash, compare } from "bcryptjs";
+// user entity
 import { User } from "./entity/User";
-import { MyContext } from "./MyContext";
-import { createRefreshToken, createAccessToken } from "./auth";
-import { isAuth } from "./isAuth";
-import { sendRefreshToken } from "./sendRefreshToken";
-import { getConnection } from "typeorm";
-import { verify } from "jsonwebtoken";
 
+// generation of JWT tokens and refresh tokens
+import { createAccessToken } from "./auth";
+
+// defining response from login route
 @ObjectType()
 class LoginResponse {
   @Field()
@@ -26,64 +24,23 @@ class LoginResponse {
   user: User;
 }
 
+// resolver
 @Resolver()
 export class UserResolver {
+  
+
+  // check graphql connection!
   @Query(() => String)
   hello() {
     return "hi!";
   }
 
-  @Query(() => String)
-  @UseMiddleware(isAuth)
-  bye(@Ctx() { payload }: MyContext) {
-    console.log(payload);
-    return `your user id is: ${payload!.userId}`;
-  }
 
-  @Query(() => [User])
-  users() {
-    return User.find();
-  }
-
-  @Query(() => User, { nullable: true })
-  me(@Ctx() context: MyContext) {
-    const authorization = context.req.headers["authorization"];
-
-    if (!authorization) {
-      return null;
-    }
-
-    try {
-      const token = authorization.split(" ")[1];
-      const payload: any = verify(token, process.env.ACCESS_TOKEN_SECRET!);
-      return User.findOne(payload.userId);
-    } catch (err) {
-      console.log(err);
-      return null;
-    }
-  }
-
-  @Mutation(() => Boolean)
-  async logout(@Ctx() { res }: MyContext) {
-    sendRefreshToken(res, "");
-
-    return true;
-  }
-
-  @Mutation(() => Boolean)
-  async revokeRefreshTokensForUser(@Arg("userId", () => Int) userId: number) {
-    await getConnection()
-      .getRepository(User)
-      .increment({ id: userId }, "tokenVersion", 1);
-
-    return true;
-  }
-
+  //login route
   @Mutation(() => LoginResponse)
   async login(
     @Arg("email") email: string,
     @Arg("password") password: string,
-    @Ctx() { res }: MyContext
   ): Promise<LoginResponse> {
     const user = await User.findOne({ where: { email } });
 
@@ -99,14 +56,14 @@ export class UserResolver {
 
     // login successful
 
-    sendRefreshToken(res, createRefreshToken(user));
-
     return {
       accessToken: createAccessToken(user),
       user
     };
   }
 
+
+  // registration route
   @Mutation(() => Boolean)
   async register(
     @Arg("email") email: string,
