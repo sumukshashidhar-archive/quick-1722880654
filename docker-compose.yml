@@ -13,19 +13,19 @@ services:
   server1:
     container_name: server1
     build:
-      context: .
+      context: ./server
     ports:
       - "4001:4000"
     
   server2:
     container_name: server2
     build:
-      context: .
+      context: ./server
     ports:
       - "4002:4000"
 
   load_balancer:
     restart: always
     build:
-      context .
+      context: ./nginx
     network_mode: "host"
