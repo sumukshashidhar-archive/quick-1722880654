@@ -11,6 +11,7 @@ import cors from "cors";
 import { User } from "./entity/User";
 import { sendRefreshToken } from "./sendRefreshToken";
 import { createAccessToken, createRefreshToken } from "./auth";
+import { PostResolver } from "./PostResolver";
 
 (async () => {
   console.log("Running code")
@@ -58,7 +59,7 @@ import { createAccessToken, createRefreshToken } from "./auth";
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [UserResolver]
+      resolvers: [UserResolver, PostResolver]
     }),
     context: ({ req, res }) => ({ req, res })
   });
