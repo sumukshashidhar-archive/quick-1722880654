@@ -1,4 +1,4 @@
-# Contributing to Transcriptase
+# Contributing to QuickHQ!
 We love your input! We want to make contributing to this project as easy and transparent as possible, whether it's:
 
 - Reporting a bug
@@ -20,7 +20,7 @@ Pull requests are the best way to propose changes to the codebase (we use [Githu
 5. Make sure your code lints.
 6. Issue that pull request!
 
-## Any contributions you make will be under the MIT Software License
+## Any contributions you make will be under the BSD-3-Clause Software License
 In short, when you submit code changes, your submissions are understood to be under the same [BSD-3-Clause](http://choosealicense.com/licenses/bsd-3-clause/) that covers the project. Feel free to contact the maintainers if that's a concern.
 
 ## Report bugs using Github's [issues](https://github.com/sumukshashidhar/quick/issues)
