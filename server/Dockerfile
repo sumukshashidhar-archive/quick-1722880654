@@ -16,7 +16,7 @@ WORKDIR /app
 
 RUN npm install -g pm2
 
-COPY npm ci --quiet --only=production
+RUN npm ci --quiet --only=production
 
 COPY --from=builder /usr/src/app/dist ./dist
 
