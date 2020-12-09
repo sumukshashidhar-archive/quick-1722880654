@@ -1,16 +1,20 @@
+//
 import {Query, Resolver, UseMiddleware, Ctx, Mutation, Arg} from "type-graphql";
 import { MyContext } from "./MyContext";
-import { User } from "./entity/User";
+
+// Middleware to check user authentication
 import { isAuth } from "./isAuth";
 
+
+// entities
+import { User } from "./entity/User";
 import {Post} from "./entity/Post";
-// @ObjectType()
-// class PostsData {
-//     @Field()
-//     posts: Array<String>
-// }
+
 
 function mysqlDate(){
+    /**
+     * Function for getting back MySQL timestamps to add to the database
+     */
     const date = new Date();
     return date.toISOString().split('T')[0];
 }
