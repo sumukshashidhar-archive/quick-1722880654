@@ -14,12 +14,14 @@ FROM node:15.3.0-alpine3.10 AS prod
 
 WORKDIR /app
 
-COPY *.json ./
+COPY package*.json ./
+
+COPY production-orm.json ./ormconfig.json
 
 RUN npm ci --quiet --only=production && npm install -g pm2
 
-COPY --from=builder /usr/src/app/dist ./dist
+COPY --from=builder /usr/src/app/dist ./
 
 EXPOSE 4000
 
-CMD ["pm2-runtime", "./dist/index.js"]
+CMD ["pm2-runtime", "index.js"]
