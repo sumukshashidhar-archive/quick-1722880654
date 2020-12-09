@@ -18,4 +18,4 @@ This is built with
 - [NodeJS](https://nodejs.org/)
   - [GraphQL](https://graphql.org/)
   - [Apollo](https://www.apollographql.com/)
-- [MongoDB](https://mongodb.com/)
+- [MySQL](https://mysql.com/)
