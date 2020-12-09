@@ -15,6 +15,8 @@ import { User } from "./entity/User";
 // generation of JWT tokens and refresh tokens
 import { createAccessToken } from "./auth";
 
+import {hostname} from "os";
+
 // defining response from login route
 @ObjectType()
 class LoginResponse {
@@ -32,7 +34,7 @@ export class UserResolver {
   // check graphql connection!
   @Query(() => String)
   hello() {
-    return "hi!";
+    return `You are currently using server ${hostname()}`;
   }
 
 
