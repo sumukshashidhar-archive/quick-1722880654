@@ -8,6 +8,7 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: long_password_here
+      MYSQL_DATABASE: quickdb
     network_mode: "host"
 
   server1:
