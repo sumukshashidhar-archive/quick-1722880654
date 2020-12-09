@@ -18,6 +18,8 @@ services:
       - "4001:4000"
     links:
       - "db:database"
+    env_file:
+      - "./server/.env"
     
   server2:
     container_name: server2
@@ -27,6 +29,8 @@ services:
       - "4002:4000"
     links:
       - "db:database"
+    env_file:
+      - "./server/.env"
 
   load_balancer:
     restart: always
