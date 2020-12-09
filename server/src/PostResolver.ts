@@ -19,12 +19,11 @@ function mysqlDate(){
 @Resolver()
 export class PostResolver {
 
-    @Query(() => String)
+    @Query(() => [Post])
     @UseMiddleware(isAuth)
     async getPosts(@Ctx() { payload }: MyContext) {
-        const id = payload?.userId;
-        const user = await User.findOne({ where: { id:id } });
-        return `${user!.email}`
+        const postslist = await Post.find({where: {user: payload!.userId}})
+        return postslist
     }
 
 
