@@ -8,15 +8,12 @@ services:
       context: ./web2
     ports:
       - "3000:3000"
-    links:
-      - "db:database"
     env_file:
       - "./web2/.env"
     depends_on:
      - db
      - server1
      - server2
-
 
   db:
     container_name: quickdb
@@ -31,8 +28,6 @@ services:
     container_name: server1
     build:
       context: ./server
-    ports:
-      - "4001:4000"
     links:
       - "db:database"
     env_file:
@@ -44,8 +39,6 @@ services:
     container_name: server2
     build:
       context: ./server
-    ports:
-      - "4002:4000"
     links:
       - "db:database"
     env_file:
@@ -62,7 +55,6 @@ services:
       - "server2:server_two"
       - "frontend:frontend_one"
       - "adminer:admin_one"
-    
     ports:
       - "80:80"
       - "443:443"
@@ -77,8 +69,6 @@ services:
   adminer:
     image: adminer
     restart: always
-    ports:
-      - 10000:8080
     links:
       - "db:database"
     depends_on:
