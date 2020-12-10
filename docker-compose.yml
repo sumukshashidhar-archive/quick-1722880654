@@ -1,6 +1,23 @@
 version: '3.3'
 
 services:
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./web2
+    ports:
+      - "3000:3000"
+    links:
+      - "db:database"
+    env_file:
+      - "./web2/.env"
+    depends_on:
+     - db
+     - server1
+     - server2
+
+
   db:
     container_name: quickdb
     image: mysql
