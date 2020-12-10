@@ -32,6 +32,10 @@
     ],
     "include": [
       "./*.tsx",
-      "./*.ts"
+      "./*.ts",
+      "./graphql/*.ts",
+      "./controllers/*.ts",
+      "./routes/*.ts",
+      "./controllers/middleware/*.ts"
     ]
   }
