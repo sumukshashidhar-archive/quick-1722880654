@@ -1,4 +1,5 @@
 const queries = require("./../graphql/queries")
+require('dotenv').config()
 import { GraphQLClient } from 'graphql-request'
 
 function prepareLinks(data) {
