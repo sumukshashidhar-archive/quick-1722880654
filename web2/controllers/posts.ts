@@ -17,7 +17,7 @@ module.exports = {
     getPosts: async (token) => {
         return new Promise(async (resolve, reject) => {
             try {
-                const data = await new GraphQLClient(process.env.ENDPOINT, {headers: {authorization: token}})
+                const data = await new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
                             .request(queries.getPosts)
                 resolve({
                     data: data.getPosts, 
