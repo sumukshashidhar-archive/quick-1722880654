@@ -2,7 +2,7 @@ import React from 'react';
 import {useQuery } from "@apollo/react-hooks"
 import gql from "graphql-tag"
 
-const App = () => {
+export function App() {
     const {data, loading} = useQuery(gql`
         {
             hello
@@ -10,11 +10,9 @@ const App = () => {
     
     `);
 
-    if(loading) {
+    if(loading || !data) {
         return <div>Loading..</div>
     }
     
     return <div>{JSON.stringify(data)}</div>
 }
-
-export default App
