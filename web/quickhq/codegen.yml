@@ -1,0 +1,10 @@
+overwrite: true
+schema: "https://backend.quickhq.tech/graphql"
+documents: "src/graphql/*.graphql"
+generates:
+  src/generated/graphql.ts:
+    plugins:
+      - "typescript-operations"
+  ./graphql.schema.json:
+    plugins:
+      - "introspection"
