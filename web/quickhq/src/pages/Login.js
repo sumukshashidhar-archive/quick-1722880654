@@ -1,6 +1,13 @@
+import { useHistory } from 'react-router-dom';
+
 import React from "react";
 export const Login = () => {
-    return (
+  const history = useHistory();
+
+  const handleClick = () => {
+      history.push("/");
+  }  
+  return (
         <>
               <header className="text-gray-700 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
