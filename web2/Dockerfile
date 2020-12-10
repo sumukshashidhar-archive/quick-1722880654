@@ -2,8 +2,6 @@ FROM node:15.3.0-alpine3.10 AS builder
 
 WORKDIR /usr/src/app
 
-COPY *.json ./
-
 COPY . .
 
 RUN npm ci --quiet && npm run build
@@ -18,7 +16,7 @@ COPY package*.json ./
 
 RUN npm ci --quiet --only=production && npm install -g pm2
 
-COPY --from=builder /usr/src/app/ ./
+COPY --from=builder /usr/src/app/dist ./
 
 EXPOSE 3000
 
