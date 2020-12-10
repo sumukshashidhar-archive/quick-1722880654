@@ -11,7 +11,7 @@ export default async function LoginController(email, password) {
                 password: password
             }
     
-            const data = await new GraphQLClient(process.env.ENDPOINT)
+            const data = await new GraphQLClient(process.env.ENDPOINT!)
                             .request(loginMutation, variables)
 
             resolve(data.login.accessToken)
