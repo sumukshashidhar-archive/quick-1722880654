@@ -1,15 +1,31 @@
-function prepareLinks(postids) {
-    let linkarray = [];
-    for(let i=0; i < postids.length; i++) {
+const queries = require("./../graphql/queries")
+import { GraphQLClient } from 'graphql-request'
+
+function prepareLinks(data) {
+    let linkarray = new Array();
+    for(let i=0; i < data.length; i++) {
         linkarray.push(
-            "https://quickhq.tech/p/" + postids[i]
+            "https://quickhq.tech/p/" + data[i]["id"]
             )
     }
     return linkarray
 }
 
-console.log(prepareLinks(["1", "2", "3"]))
 
-// module.exports = {
-    
-// }
+module.exports = {
+    getPosts: async (token) => {
+        console.log(token)
+        return new Promise(async (resolve, reject) => {
+            try {
+                const data = await new GraphQLClient(process.env.ENDPOINT, {headers: {authorization: token}})
+                            .request(queries.getPosts)
+                resolve({
+                    data: data.getPosts, 
+                    links: prepareLinks(data.getPosts)
+                })
+            } catch (e) {
+                reject(e)
+            }
+        })
+    }
+}
