@@ -5,7 +5,7 @@ export const Land = () => {
   const history = useHistory();
 
   const handleClick = () => {
-      history.push("/");
+      history.push("/login");
   }
   return (
     <>
