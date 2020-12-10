@@ -20,7 +20,7 @@ export default function Dashboard(app) {
 
     })
 
-    app.get('/logout', async(req, res) => {
+    app.get('/logout', async(_, res) => {
         res.clearCookie('Authorization')
         res.redirect('/')
     })
