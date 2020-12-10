@@ -20,11 +20,12 @@ mutation makePost($content: String!) {
 `
 
 const getPostsForUser = gql`
-
-query getPosts{
-    id
-    timestamp
-    content
+{
+    getPosts {
+        id
+        timestamp
+        content
+    }
 }
 
 `
