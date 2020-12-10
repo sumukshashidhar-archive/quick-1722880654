@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --exec ts-node index.ts",
-    "build": "tsc",
+    "build": "tsc && mkdir ./dist/views && mkdir ./dist/public && mkdir ./dist/public/styles && cp ./views/*.html ./dist/views/ && cp ./public/styles/*.css ./dist/public/styles/",
     "tailwind:css": "postcss public/styles/tailwind.css -o public/styles/style.css"
   },
   "repository": {
