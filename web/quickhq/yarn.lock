@@ -2,6 +2,32 @@
 # yarn lockfile v1
 
 
+"@apollo/client@latest":
+  "integrity" "sha512-PnbkSa2gcFD6Qakn2eJCJ1RMYdCzEIlRlaHZGnUNbH+7AKOYwjDVtSVCC03nDtWeS9yWiJ15A8xGMreMKAboQQ=="
+  "resolved" "https://registry.npmjs.org/@apollo/client/-/client-3.3.4.tgz"
+  "version" "3.3.4"
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.0.0"
+    "@types/zen-observable" "^0.8.0"
+    "@wry/context" "^0.5.2"
+    "@wry/equality" "^0.3.0"
+    "fast-json-stable-stringify" "^2.0.0"
+    "graphql-tag" "^2.11.0"
+    "hoist-non-react-statics" "^3.3.2"
+    "optimism" "^0.13.1"
+    "prop-types" "^15.7.2"
+    "symbol-observable" "^2.0.0"
+    "ts-invariant" "^0.6.0"
+    "tslib" "^1.10.0"
+    "zen-observable" "^0.8.14"
+
+"@apollo/react-hooks@^4.0.0":
+  "integrity" "sha512-fCu0cbne3gbUl0QbA8X4L33iuuFVQbC5Jo2MIKRK8CyawR6PoxDpFdFA1kc6033ODZuZZ9Eo4RdeJFlFIIYcLA=="
+  "resolved" "https://registry.npmjs.org/@apollo/react-hooks/-/react-hooks-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "@apollo/client" "latest"
+
 "@ardatan/aggregate-error@0.0.6":
   "integrity" "sha512-vyrkEHG1jrukmzTPtyWB4NLPauUw5bQeg4uhn8f+1SSynmrOcyvlb1GKQjjgoBzElLdfXCRYX8UnBlhklOHYRQ=="
   "resolved" "https://registry.npmjs.org/@ardatan/aggregate-error/-/aggregate-error-0.0.6.tgz"
@@ -1722,6 +1748,11 @@
     "is-promise" "4.0.0"
     "tslib" "~2.0.1"
 
+"@graphql-typed-document-node/core@^3.0.0":
+  "integrity" "sha512-wYn6r8zVZyQJ6rQaALBEln5B1pzxb9shV5Ef97kTvn6yVGrqyXVnDqnU24MXnFubR+rZjBY9NWuxX3FB2sTsjg=="
+  "resolved" "https://registry.npmjs.org/@graphql-typed-document-node/core/-/core-3.1.0.tgz"
+  "version" "3.1.0"
+
 "@hapi/address@2.x.x":
   "integrity" "sha512-QD1PhQk+s31P1ixsX0H0Suoupp3VMXzIVMSwobR3F3MSUO2YCV0B7xqLcUw/Bh8yuvd3LhpyqLQWTNcRmp6IdQ=="
   "resolved" "https://registry.yarnpkg.com/@hapi/address/-/address-2.1.4.tgz"
@@ -2354,7 +2385,7 @@
   "resolved" "https://registry.yarnpkg.com/@types/minimatch/-/minimatch-3.0.3.tgz"
   "version" "3.0.3"
 
-"@types/node@*":
+"@types/node@*", "@types/node@>=6":
   "integrity" "sha512-JsoLXFppG62tWTklIoO4knA+oDTYsmqWxHRvd4lpmfQRNhX6osheUOWETP2jMoV/2bEHuMra8Pp3Dmo/stBFcw=="
   "resolved" "https://registry.yarnpkg.com/@types/node/-/node-14.14.9.tgz"
   "version" "14.14.9"
@@ -2415,6 +2446,11 @@
   dependencies:
     "source-map" "^0.6.1"
 
+"@types/ungap__global-this@^0.3.1":
+  "integrity" "sha512-+/DsiV4CxXl6ZWefwHZDXSe1Slitz21tom38qPCaG0DYCS1NnDPIQDTKcmQ/tvK/edJUKkmuIDBJbmKDiB0r/g=="
+  "resolved" "https://registry.npmjs.org/@types/ungap__global-this/-/ungap__global-this-0.3.1.tgz"
+  "version" "0.3.1"
+
 "@types/webpack-sources@*":
   "integrity" "sha512-a5kPx98CNFRKQ+wqawroFunvFqv7GHm/3KOI52NY9xWADgc8smu4R6prt4EU/M4QfVjvgBkMqU4fBhw3QfMVkg=="
   "resolved" "https://registry.yarnpkg.com/@types/webpack-sources/-/webpack-sources-2.0.0.tgz"
@@ -2454,6 +2490,11 @@
   "version" "15.0.10"
   dependencies:
     "@types/yargs-parser" "*"
+
+"@types/zen-observable@^0.8.0":
+  "integrity" "sha512-wmk0xQI6Yy7Fs/il4EpOcflG4uonUpYGqvZARESLc2oy4u69fkatFLbJOeW4Q6awO15P4rduAe6xkwHevpXcUQ=="
+  "resolved" "https://registry.npmjs.org/@types/zen-observable/-/zen-observable-0.8.1.tgz"
+  "version" "0.8.1"
 
 "@typescript-eslint/eslint-plugin@^4.0.0", "@typescript-eslint/eslint-plugin@^4.5.0":
   "integrity" "sha512-d7LeQ7dbUrIv5YVFNzGgaW3IQKMmnmKFneRWagRlGYOSfLJVaRbj/FrBNOBC1a3tVO+TgNq1GbHvRtg1kwL0FQ=="
@@ -2561,6 +2602,11 @@
   dependencies:
     "@typescript-eslint/types" "4.8.1"
     "eslint-visitor-keys" "^2.0.0"
+
+"@ungap/global-this@^0.4.2":
+  "integrity" "sha512-uFg7Kz+E12RBlgBLMlWVjmn2OIeE2J1Lzij0RseNcCVsrJX+LEB4fQ9MnoPXkXJmO5cHtTEzI5ATtb3IJfQ9tQ=="
+  "resolved" "https://registry.npmjs.org/@ungap/global-this/-/global-this-0.4.2.tgz"
+  "version" "0.4.2"
 
 "@webassemblyjs/ast@1.9.0":
   "integrity" "sha512-C6wW5L+b7ogSDVqymbkkvuW9kruN//YisMED04xzeBBqjHa2FYnmvOlS6Xj68xWQRgWvI9cIglsjFowH/RJyEA=="
@@ -2706,6 +2752,35 @@
     "@webassemblyjs/ast" "1.9.0"
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
+
+"@wry/context@^0.4.0":
+  "integrity" "sha512-LrKVLove/zw6h2Md/KZyWxIkFM6AoyKp71OqpH9Hiip1csjPVoD3tPxlbQUNxEnHENks3UGgNpSBCAfq9KWuag=="
+  "resolved" "https://registry.npmjs.org/@wry/context/-/context-0.4.4.tgz"
+  "version" "0.4.4"
+  dependencies:
+    "@types/node" ">=6"
+    "tslib" "^1.9.3"
+
+"@wry/context@^0.5.2":
+  "integrity" "sha512-B/JLuRZ/vbEKHRUiGj6xiMojST1kHhu4WcreLfNN7q9DqQFrb97cWgf/kiYsPSUCAMVN0HzfFc8XjJdzgZzfjw=="
+  "resolved" "https://registry.npmjs.org/@wry/context/-/context-0.5.2.tgz"
+  "version" "0.5.2"
+  dependencies:
+    "tslib" "^1.9.3"
+
+"@wry/equality@^0.1.2":
+  "integrity" "sha512-mwEVBDUVODlsQQ5dfuLUS5/Tf7jqUKyhKYHmVi4fPB6bDMOfWvUPJmKgS1Z7Za/sOI3vzWt4+O7yCiL/70MogA=="
+  "resolved" "https://registry.npmjs.org/@wry/equality/-/equality-0.1.11.tgz"
+  "version" "0.1.11"
+  dependencies:
+    "tslib" "^1.9.3"
+
+"@wry/equality@^0.3.0":
+  "integrity" "sha512-DRDAu/e3oWBj826OWNV/GCmSdHD248mASXImgNoLE/3SDvpgb+k6G/+TAmdpIB35ju264+kB22Rx92eXg52DnA=="
+  "resolved" "https://registry.npmjs.org/@wry/equality/-/equality-0.3.0.tgz"
+  "version" "0.3.0"
+  dependencies:
+    "tslib" "^1.9.3"
 
 "@xtuc/ieee754@^1.2.0":
   "integrity" "sha512-DX8nKgqcGwsc0eJSqYt5lwP4DH5FlHnmuWWBRy7X0NcaGR0ZtuyeESgMwTYVEtxmsNGY+qit4QYT/MIYTOTPeA=="
@@ -2921,6 +2996,101 @@
   dependencies:
     "normalize-path" "^3.0.0"
     "picomatch" "^2.0.4"
+
+"apollo-boost@^0.4.9":
+  "integrity" "sha512-05y5BKcDaa8w47f8d81UVwKqrAjn8uKLv6QM9fNdldoNzQ+rnOHgFlnrySUZRz9QIT3vPftQkEz2UEASp1Mi5g=="
+  "resolved" "https://registry.npmjs.org/apollo-boost/-/apollo-boost-0.4.9.tgz"
+  "version" "0.4.9"
+  dependencies:
+    "apollo-cache" "^1.3.5"
+    "apollo-cache-inmemory" "^1.6.6"
+    "apollo-client" "^2.6.10"
+    "apollo-link" "^1.0.6"
+    "apollo-link-error" "^1.0.3"
+    "apollo-link-http" "^1.3.1"
+    "graphql-tag" "^2.4.2"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.10.0"
+
+"apollo-cache-inmemory@^1.6.6":
+  "integrity" "sha512-L8pToTW/+Xru2FFAhkZ1OA9q4V4nuvfoPecBM34DecAugUZEBhI2Hmpgnzq2hTKZ60LAMrlqiASm0aqAY6F8/A=="
+  "resolved" "https://registry.npmjs.org/apollo-cache-inmemory/-/apollo-cache-inmemory-1.6.6.tgz"
+  "version" "1.6.6"
+  dependencies:
+    "apollo-cache" "^1.3.5"
+    "apollo-utilities" "^1.3.4"
+    "optimism" "^0.10.0"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.10.0"
+
+"apollo-cache@^1.3.5", "apollo-cache@1.3.5":
+  "integrity" "sha512-1XoDy8kJnyWY/i/+gLTEbYLnoiVtS8y7ikBr/IfmML4Qb+CM7dEEbIUOjnY716WqmZ/UpXIxTfJsY7rMcqiCXA=="
+  "resolved" "https://registry.npmjs.org/apollo-cache/-/apollo-cache-1.3.5.tgz"
+  "version" "1.3.5"
+  dependencies:
+    "apollo-utilities" "^1.3.4"
+    "tslib" "^1.10.0"
+
+"apollo-client@^2.6.10":
+  "integrity" "sha512-jiPlMTN6/5CjZpJOkGeUV0mb4zxx33uXWdj/xQCfAMkuNAC3HN7CvYDyMHHEzmcQ5GV12LszWoQ/VlxET24CtA=="
+  "resolved" "https://registry.npmjs.org/apollo-client/-/apollo-client-2.6.10.tgz"
+  "version" "2.6.10"
+  dependencies:
+    "@types/zen-observable" "^0.8.0"
+    "apollo-cache" "1.3.5"
+    "apollo-link" "^1.0.0"
+    "apollo-utilities" "1.3.4"
+    "symbol-observable" "^1.0.2"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.10.0"
+    "zen-observable" "^0.8.0"
+
+"apollo-link-error@^1.0.3":
+  "integrity" "sha512-jAZOOahJU6bwSqb2ZyskEK1XdgUY9nkmeclCrW7Gddh1uasHVqmoYc4CKdb0/H0Y1J9lvaXKle2Wsw/Zx1AyUg=="
+  "resolved" "https://registry.npmjs.org/apollo-link-error/-/apollo-link-error-1.1.13.tgz"
+  "version" "1.1.13"
+  dependencies:
+    "apollo-link" "^1.2.14"
+    "apollo-link-http-common" "^0.2.16"
+    "tslib" "^1.9.3"
+
+"apollo-link-http-common@^0.2.16":
+  "integrity" "sha512-2tIhOIrnaF4UbQHf7kjeQA/EmSorB7+HyJIIrUjJOKBgnXwuexi8aMecRlqTIDWcyVXCeqLhUnztMa6bOH/jTg=="
+  "resolved" "https://registry.npmjs.org/apollo-link-http-common/-/apollo-link-http-common-0.2.16.tgz"
+  "version" "0.2.16"
+  dependencies:
+    "apollo-link" "^1.2.14"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.9.3"
+
+"apollo-link-http@^1.3.1":
+  "integrity" "sha512-uWcqAotbwDEU/9+Dm9e1/clO7hTB2kQ/94JYcGouBVLjoKmTeJTUPQKcJGpPwUjZcSqgYicbFqQSoJIW0yrFvg=="
+  "resolved" "https://registry.npmjs.org/apollo-link-http/-/apollo-link-http-1.5.17.tgz"
+  "version" "1.5.17"
+  dependencies:
+    "apollo-link" "^1.2.14"
+    "apollo-link-http-common" "^0.2.16"
+    "tslib" "^1.9.3"
+
+"apollo-link@^1.0.0", "apollo-link@^1.0.6", "apollo-link@^1.2.14":
+  "integrity" "sha512-p67CMEFP7kOG1JZ0ZkYZwRDa369w5PIjtMjvrQd/HnIV8FRsHRqLqK+oAZQnFa1DDdZtOtHTi+aMIW6EatC2jg=="
+  "resolved" "https://registry.npmjs.org/apollo-link/-/apollo-link-1.2.14.tgz"
+  "version" "1.2.14"
+  dependencies:
+    "apollo-utilities" "^1.3.0"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.9.3"
+    "zen-observable-ts" "^0.8.21"
+
+"apollo-utilities@^1.3.0", "apollo-utilities@^1.3.4", "apollo-utilities@1.3.4":
+  "integrity" "sha512-pk2hiWrCXMAy2fRPwEyhvka+mqwzeP60Jr1tRYi5xru+3ko94HI9o6lK0CT33/w4RDlxWchmdhDCrvdr+pHCig=="
+  "resolved" "https://registry.npmjs.org/apollo-utilities/-/apollo-utilities-1.3.4.tgz"
+  "version" "1.3.4"
+  dependencies:
+    "@wry/equality" "^0.1.2"
+    "fast-json-stable-stringify" "^2.0.0"
+    "ts-invariant" "^0.4.0"
+    "tslib" "^1.10.0"
 
 "aproba@^1.1.1":
   "integrity" "sha512-Y9J6ZjXtoYh8RnXVCMOU/ttDmk1aBjunq9vO0ta5x85WDQiQfUF9sIPBITdbiiIVcBo03Hi3jMxigBtsddlXRw=="
@@ -3146,6 +3316,13 @@
   "integrity" "sha512-5Kgy8Cz6LPC9DJcNb3yjAXTu3XihQgEdnIg50c//zOC/MyLP0Clg+Y8Sh9ZjjnvBrDZU4DgXS9C3T9r4/scGZQ=="
   "resolved" "https://registry.yarnpkg.com/axe-core/-/axe-core-4.1.1.tgz"
   "version" "4.1.1"
+
+"axios@^0.21.0":
+  "integrity" "sha512-fmkJBknJKoZwem3/IKSSLpkdNXZeBu5Q7GA/aRsr2btgrptmSCxi2oFjZHqGdK9DoTil9PIHlPIZw2EcRJXRvw=="
+  "resolved" "https://registry.npmjs.org/axios/-/axios-0.21.0.tgz"
+  "version" "0.21.0"
+  dependencies:
+    "follow-redirects" "^1.10.0"
 
 "axobject-query@^2.2.0":
   "integrity" "sha512-Td525n+iPOOyUQIeBfcASuG6uJsDOITl7Mds5gFyerkWiX7qhUTdYUBlSgNMyVqtSJqwpt1kXGLdUt6SykLMRA=="
@@ -6194,7 +6371,7 @@
     "inherits" "^2.0.3"
     "readable-stream" "^2.3.6"
 
-"follow-redirects@^1.0.0":
+"follow-redirects@^1.0.0", "follow-redirects@^1.10.0":
   "integrity" "sha512-aq6gF1BEKje4a9i9+5jimNFIpq4Q1WiwBToeRK5NvZBd/TRsmW8BsJfOEGkr76TbOyPVD3OVDN910EcUNtRYEA=="
   "resolved" "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.13.0.tgz"
   "version" "1.13.0"
@@ -6537,7 +6714,7 @@
     "extract-files" "^9.0.0"
     "form-data" "^3.0.0"
 
-"graphql-tag@^2.0.0", "graphql-tag@^2.11.0":
+"graphql-tag@^2.0.0", "graphql-tag@^2.11.0", "graphql-tag@^2.4.2":
   "integrity" "sha512-VmsD5pJqWJnQZMUeRwrDhfgoyqcfwEkvtpANqcoUG8/tOLkwNgU9mzub/Mc78OJMhHjx7gfAMTxzdG43VGg3bA=="
   "resolved" "https://registry.npmjs.org/graphql-tag/-/graphql-tag-2.11.0.tgz"
   "version" "2.11.0"
@@ -6558,7 +6735,7 @@
   "resolved" "https://registry.npmjs.org/graphql-ws/-/graphql-ws-2.0.1.tgz"
   "version" "2.0.1"
 
-"graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^14.0.0 || ^15.0.0", "graphql@^15.0.0", "graphql@>=0.11 <=15", "graphql@0.13.1 - 15", "graphql@14.x || 15.x":
+"graphql@^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.11.3 || ^0.12.3 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0", "graphql@^14.0.0 || ^15.0.0", "graphql@^15.0.0", "graphql@>=0.11 <=15", "graphql@0.13.1 - 15", "graphql@14.x || 15.x":
   "integrity" "sha512-EB3zgGchcabbsU9cFe1j+yxdzKQKAbGUWRb13DsrsMN1yyfmmIq+2+L5MqVWcDCE4V89R5AyUOi7sMOGxdsYtA=="
   "resolved" "https://registry.npmjs.org/graphql/-/graphql-15.4.0.tgz"
   "version" "15.4.0"
@@ -6707,7 +6884,7 @@
     "minimalistic-assert" "^1.0.0"
     "minimalistic-crypto-utils" "^1.0.1"
 
-"hoist-non-react-statics@^3.1.0":
+"hoist-non-react-statics@^3.1.0", "hoist-non-react-statics@^3.3.2":
   "integrity" "sha512-/gGivxi8JPKWNm/W0jSmzcMPpfpPLc3dY/6GxhX2hQ9iGj3aDfklV4ET7NjKpSinLpJ5vafa9iiGIEZg10SfBw=="
   "resolved" "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz"
   "version" "3.3.2"
@@ -9424,6 +9601,20 @@
   dependencies:
     "is-wsl" "^1.1.0"
 
+"optimism@^0.10.0":
+  "integrity" "sha512-9A5pqGoQk49H6Vhjb9kPgAeeECfUDF6aIICbMDL23kDLStBn1MWk3YvcZ4xWF9CsSf6XEgvRLkXy4xof/56vVw=="
+  "resolved" "https://registry.npmjs.org/optimism/-/optimism-0.10.3.tgz"
+  "version" "0.10.3"
+  dependencies:
+    "@wry/context" "^0.4.0"
+
+"optimism@^0.13.1":
+  "integrity" "sha512-16RRVYZe8ODcUqpabpY7Gb91vCAbdhn8FHjlUb2Hqnjjow1j8Z1dlppds+yAsLbreNTVylLC+tNX6DuC2vt3Kw=="
+  "resolved" "https://registry.npmjs.org/optimism/-/optimism-0.13.1.tgz"
+  "version" "0.13.1"
+  dependencies:
+    "@wry/context" "^0.5.2"
+
 "optimize-css-assets-webpack-plugin@5.0.4":
   "integrity" "sha512-wqd6FdI2a5/FdoiCNNkEvLeA//lHHfG24Ln2Xm2qqdIk4aOlsR18jwpyOihqQ8849W3qu2DX8fOYxpvTMj+93A=="
   "resolved" "https://registry.yarnpkg.com/optimize-css-assets-webpack-plugin/-/optimize-css-assets-webpack-plugin-5.0.4.tgz"
@@ -11045,7 +11236,7 @@
   optionalDependencies:
     "fsevents" "^2.1.3"
 
-"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^17.0.1", "react@>=15", "react@17.0.1":
+"react@*", "react@^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0", "react@^16.8.0 || ^17.0.0", "react@^17.0.1", "react@>=15", "react@17.0.1":
   "integrity" "sha512-lG9c9UuMHdcAexXtigOZLX8exLWkW0Ku29qPRU8uhF2R9BN96dLCt0psvzPLlHc5OWkgymP3qwTRgbnw5BKx3w=="
   "resolved" "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz"
   "version" "17.0.1"
@@ -12582,10 +12773,15 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
-"symbol-observable@^1.1.0":
+"symbol-observable@^1.0.2", "symbol-observable@^1.1.0":
   "integrity" "sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ=="
   "resolved" "https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.2.0.tgz"
   "version" "1.2.0"
+
+"symbol-observable@^2.0.0":
+  "integrity" "sha512-sQV7phh2WCYAn81oAkakC5qjq2Ml0g8ozqz03wOGnx9dDlG1de6yrF+0RAzSJD8fPUow3PTSMf2SAbOGxb93BA=="
+  "resolved" "https://registry.npmjs.org/symbol-observable/-/symbol-observable-2.0.3.tgz"
+  "version" "2.0.3"
 
 "symbol-tree@^3.2.4":
   "integrity" "sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw=="
@@ -12877,6 +13073,22 @@
   "resolved" "https://registry.yarnpkg.com/tryer/-/tryer-1.0.1.tgz"
   "version" "1.0.1"
 
+"ts-invariant@^0.4.0":
+  "integrity" "sha512-uEtWkFM/sdZvRNNDL3Ehu4WVpwaulhwQszV8mrtcdeE8nN00BV9mAmQ88RkrBhFgl9gMgvjJLAQcZbnPXI9mlA=="
+  "resolved" "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.4.4.tgz"
+  "version" "0.4.4"
+  dependencies:
+    "tslib" "^1.9.3"
+
+"ts-invariant@^0.6.0":
+  "integrity" "sha512-caoafsfgb8QxdrKzFfjKt627m4i8KTtfAiji0DYJfWI4A/S9ORNNpzYuD9br64kyKFgxn9UNaLLbSupam84mCA=="
+  "resolved" "https://registry.npmjs.org/ts-invariant/-/ts-invariant-0.6.0.tgz"
+  "version" "0.6.0"
+  dependencies:
+    "@types/ungap__global-this" "^0.3.1"
+    "@ungap/global-this" "^0.4.2"
+    "tslib" "^1.9.3"
+
 "ts-log@^2.2.3":
   "integrity" "sha512-XvB+OdKSJ708Dmf9ore4Uf/q62AYDTzFcAdxc8KNML1mmAWywRFVt/dn1KYJH8Agt5UJNujfM3znU5PxgAzA2w=="
   "resolved" "https://registry.npmjs.org/ts-log/-/ts-log-2.2.3.tgz"
@@ -12909,7 +13121,7 @@
     "minimist" "^1.2.0"
     "strip-bom" "^3.0.0"
 
-"tslib@^1.10.0", "tslib@^1.8.1", "tslib@^1.9.0":
+"tslib@^1.10.0", "tslib@^1.8.1", "tslib@^1.9.0", "tslib@^1.9.3":
   "integrity" "sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
@@ -13947,3 +14159,16 @@
   "integrity" "sha512-Ux4ygGWsu2c7isFWe8Yu1YluJmqVhxqK2cLXNQA5AcC3QfbGNpM7fu0Y8b/z16pXLnFxZYvWhd3fhBY9DLmC6Q=="
   "resolved" "https://registry.npmjs.org/yn/-/yn-3.1.1.tgz"
   "version" "3.1.1"
+
+"zen-observable-ts@^0.8.21":
+  "integrity" "sha512-Yj3yXweRc8LdRMrCC8nIc4kkjWecPAUVh0TI0OUrWXx6aX790vLcDlWca6I4vsyCGH3LpWxq0dJRcMOFoVqmeg=="
+  "resolved" "https://registry.npmjs.org/zen-observable-ts/-/zen-observable-ts-0.8.21.tgz"
+  "version" "0.8.21"
+  dependencies:
+    "tslib" "^1.9.3"
+    "zen-observable" "^0.8.0"
+
+"zen-observable@^0.8.0", "zen-observable@^0.8.14":
+  "integrity" "sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ=="
+  "resolved" "https://registry.npmjs.org/zen-observable/-/zen-observable-0.8.15.tgz"
+  "version" "0.8.15"
