@@ -57,11 +57,21 @@ services:
     restart: always
     build:
       context: ./nginx
-    network_mode: "host"
+    links:
+      - "server1:server_one"
+      - "server2:server_two"
+      - "frontend:frontend_one"
+      - "adminer:admin_one"
+    
+    ports:
+      - "80:80"
+      - "443:443"
+
     depends_on:
       - server1
       - server2
       - db
+      - frontend
 
 
   adminer:
