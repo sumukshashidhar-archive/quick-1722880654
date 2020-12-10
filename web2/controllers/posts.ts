@@ -14,7 +14,6 @@ function prepareLinks(data) {
 
 module.exports = {
     getPosts: async (token) => {
-        console.log(token)
         return new Promise(async (resolve, reject) => {
             try {
                 const data = await new GraphQLClient(process.env.ENDPOINT, {headers: {authorization: token}})

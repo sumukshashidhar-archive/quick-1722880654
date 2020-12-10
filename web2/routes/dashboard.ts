@@ -14,8 +14,6 @@ export default function Dashboard(app) {
                     links: data.links
                 }})
             }
-
-            console.log(data)
         } catch (e) {
             console.log(e)
         }
