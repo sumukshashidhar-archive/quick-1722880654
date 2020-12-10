@@ -46,6 +46,7 @@ services:
     depends_on:
       - db
 
+
   load_balancer:
     restart: always
     build:
