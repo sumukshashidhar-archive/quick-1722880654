@@ -1,6 +1,6 @@
 require('dotenv').config()
 const queries = require("./../graphql/queries")
-import { GraphQLClient, gql } from 'graphql-request'
+import { GraphQLClient } from 'graphql-request'
 
 export default async function LoginController(email, password) {
     return new Promise(async (resolve, reject) => {
