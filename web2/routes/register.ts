@@ -31,7 +31,7 @@ export default function Register(app) {
             email: Joi.string().required(),
             password: Joi.string().required()
         })
-    })),async (req, res) => {
+    })),async (_, res) => {
         res.send("ok")
 
     })
