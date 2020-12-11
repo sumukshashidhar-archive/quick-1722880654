@@ -10,10 +10,6 @@ services:
       - "3000:3000"
     env_file:
       - "./web2/.env"
-    depends_on:
-     - db
-     - server1
-     - server2
 
   db:
     container_name: quickdb
