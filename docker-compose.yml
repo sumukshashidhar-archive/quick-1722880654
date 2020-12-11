@@ -34,6 +34,9 @@ services:
       - "./server/.env"
     depends_on:
      - db
+    volumes:
+    - "/etc/timezone:/etc/timezone:ro"
+    - "/etc/localtime:/etc/localtime:ro"
     
   server2:
     container_name: server2
@@ -45,6 +48,9 @@ services:
       - "./server/.env"
     depends_on:
       - db
+    volumes:
+    - "/etc/timezone:/etc/timezone:ro"
+    - "/etc/localtime:/etc/localtime:ro"
 
 
   load_balancer:
