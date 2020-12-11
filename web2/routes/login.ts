@@ -2,31 +2,11 @@ import { celebrate, Joi, Segments } from "celebrate";
 import express from "express";
 const path = require("path")
 import LoginController from "./../controllers/login"
-const jwt = require("jsonwebtoken")
-
-async function checkerToken(req: express.Request, res: express.Response, next: express.NextFunction) {
-    if (req.cookies["Authorization"]) {
-        try {
-            const data = await jwt.decode(req.cookies["Authorization"].split(' ')[1])
-            if(Date.now() >= data.exp * 1000) {
-                next()
-            }
-            else {
-                res.redirect('/dashboard')
-            }
-        } catch (e) {
-            next()
-        }
-    }
-    else {
-        next()
-    }
-}
-
+const isNoAuth = require("./../controllers/middleware/isNoAuth")
 
 export default function Login(app: express.Application) {
 
-    app.get('/login', checkerToken, (_, res) => {
+    app.get('/login', isNoAuth, (_, res) => {
         res.sendFile(path.resolve('views/login.html'))
     })
 
