@@ -9,11 +9,11 @@ export default async function PostController(content: String, token: any) {
             let variables = {
                 content: content
             }
-            new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
+            let data = await new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
                 .request(postMutation, variables)
-                .then()
-
-            resolve(true)
+            
+            resolve(data.makePost)
+            
         } catch (e) {
            reject(e)
         }
