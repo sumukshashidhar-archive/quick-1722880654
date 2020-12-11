@@ -27,5 +27,22 @@ module.exports = {
                 reject(e)
             }
         })
+    },
+
+    getSinglePost: async (token: any, id: string) => {
+        return new Promise(async (resolve, reject) => {
+            try {
+                const variables = {
+                    id: id
+                }
+                const data = await new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
+                    .request(queries.getPost, variables)
+                resolve({
+                    data: data.getPost,
+                })
+            } catch (e) {
+               reject(e)
+            }
+        })
     }
 }
