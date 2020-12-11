@@ -10,6 +10,16 @@ mutation Login($email: String!, $password: String!) {
 }
 `
 
+const RegisterMutation = gql`
+mutation Register($email: String!, $password: String!) {
+
+    register(email: $email, password: $password)
+}
+`
+
+
+
+
 const PostMaker = gql`
 mutation makePost($content: String!) {
     makePost(content: $content)
@@ -34,6 +44,7 @@ module.exports = {
 
     login: LoginMutation,
     makePost: PostMaker,
-    getPosts: getPostsForUser
+    getPosts: getPostsForUser,
+    register: RegisterMutation
 
 }
