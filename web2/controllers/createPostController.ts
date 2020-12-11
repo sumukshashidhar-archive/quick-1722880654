@@ -9,7 +9,6 @@ export default async function PostController(content: String, token: any) {
             let variables = {
                 content: content
             }
-
             const data = await new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
                 .request(postMutation, variables)
 
