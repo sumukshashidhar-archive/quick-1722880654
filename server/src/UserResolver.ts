@@ -71,18 +71,24 @@ export class UserResolver {
     @Arg("email") email: string,
     @Arg("password") password: string
   ) {
-    const hashedPassword = await hash(password, 12);
+    const userCheck = await User.findOne({ where: { email } });
+    if(!userCheck) {
+      const hashedPassword = await hash(password, 12);
 
-    try {
-      await User.insert({
-        email,
-        password: hashedPassword
-      });
-    } catch (err) {
-      console.log(err);
+      try {
+        await User.insert({
+          email,
+          password: hashedPassword
+        });
+      } catch (err) {
+        console.log(err);
+        return false;
+      }
+
+      return true;
+    } else {
       return false;
     }
 
-    return true;
   }
 }
