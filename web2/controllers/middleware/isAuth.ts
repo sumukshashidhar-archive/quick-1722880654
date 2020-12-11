@@ -1,5 +1,6 @@
 const jwt = require("jsonwebtoken")
-module.exports = async function(req, res, next) {
+import express from "express";
+module.exports = async function(req: express.Request, res: express.Response, next: express.NextFunction) {
     if (req.cookies["Authorization"]) {
         try {
             const data = await jwt.decode(req.cookies["Authorization"].split(' ')[1])
