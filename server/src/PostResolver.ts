@@ -1,13 +1,13 @@
 // for types and compilation
-import {Query, Resolver, UseMiddleware, Ctx, Mutation, Arg} from "type-graphql";
-import { MyContext } from "./MyContext";
+import {Arg, Ctx, Mutation, Query, Resolver, UseMiddleware} from "type-graphql";
+import {MyContext} from "./MyContext";
 
 // Middleware to check user authentication
-import { isAuth } from "./isAuth";
+import {isAuth} from "./isAuth";
 
 
 // entities
-import { User } from "./entity/User";
+import {User} from "./entity/User";
 import {Post} from "./entity/Post";
 
 // functions
@@ -23,6 +23,12 @@ function mysqlDate(){
 @Resolver()
 export class PostResolver {
 
+    @Query(() => Post)
+    @UseMiddleware(isAuth)
+    async getPost(@Ctx() { payload }: MyContext, @Arg("id") id: string) {
+        return await Post.findOne({where: {user: payload!.userId, id: id}})
+    }
+
     /**
      * Resolver to get all posts for a given user
      * 
@@ -30,8 +36,7 @@ export class PostResolver {
     @Query(() => [Post])
     @UseMiddleware(isAuth)
     async getPosts(@Ctx() { payload }: MyContext) {
-        const postslist = await Post.find({where: {user: payload!.userId}})
-        return postslist
+        return await Post.find({where: {user: payload!.userId}, order: {timestamp: "ASC"}})
     }
 
     /**
