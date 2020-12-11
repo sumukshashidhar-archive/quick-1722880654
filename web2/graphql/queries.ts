@@ -2,8 +2,8 @@
 import { gql } from 'graphql-request'
 
 const getPostQuery = gql`
-{
-    getPost($id: String!) {
+query GetPost($id: String!) {
+    getPost(id: $id) {
         content
         timestamp
     }
