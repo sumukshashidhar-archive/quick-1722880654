@@ -20,6 +20,15 @@ export default function Dashboard(app: express.Application) {
 
     })
 
+    app.get('/p/:id', isAuth, async  (req: express.Request, res: express.Response) => {
+       try {
+           const data = await postcon.getSinglePost(req.cookies['Authorization'], req.params.id)
+           res.send(data)
+       } catch (e) {
+           res.send(e)
+       }
+    })
+
     app.get('/logout', async(_: express.Request, res: express.Response) => {
         res.clearCookie('Authorization')
         res.redirect('/')
