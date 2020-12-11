@@ -7,7 +7,7 @@ import {User} from "./User"
 export class Post extends BaseEntity{
 
     @Field(() => Int)
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("uuid")
     id: number;
     
     @Field(() => Date)
