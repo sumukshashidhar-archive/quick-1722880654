@@ -18,7 +18,6 @@ export class Post extends BaseEntity{
     @Column({type: "longtext"})
     content: String;
 
-
     @ManyToOne(_ => User, user => user.posts)
     user: User
 }
