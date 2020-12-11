@@ -2,30 +2,11 @@ import { celebrate, Joi, Segments } from "celebrate";
 import express from "express";
 const path = require("path")
 import RegisterController from "../controllers/register";
-const jwt = require("jsonwebtoken")
-
-async function checkerToken(req: express.Request, res: express.Response, next:express.NextFunction) {
-    if (req.cookies["Authorization"]) {
-        try {
-            const data = await jwt.decode(req.cookies["Authorization"].split(' ')[1])
-            if(Date.now() >= data.exp * 1000) {
-                next()
-            }
-            else {
-                res.redirect('/dashboard')
-            }
-        } catch (e) {
-            next()
-        }
-    }
-    else {
-        next()
-    }
-}
+const isNoAuth = require("./../controllers/middleware/isNoAuth")
 
 export default function Register(app: express.Application) {
 
-    app.get('/register', checkerToken, (_, res) => {
+    app.get('/register', isNoAuth, (_, res) => {
         res.sendFile(path.resolve('views/register.html'))
     })
 
