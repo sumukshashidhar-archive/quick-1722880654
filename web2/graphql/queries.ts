@@ -1,6 +1,15 @@
 
 import { gql } from 'graphql-request'
 
+const getPostQuery = gql`
+{
+    getPost($id: String!) {
+        content
+        timestamp
+    }
+}
+`
+
 const LoginMutation = gql`
 mutation Login($email: String!, $password: String!) {
 
@@ -45,6 +54,7 @@ module.exports = {
     login: LoginMutation,
     makePost: PostMaker,
     getPosts: getPostsForUser,
+    getPost: getPostQuery,
     register: RegisterMutation
 
 }
