@@ -6,15 +6,15 @@ import {User} from "./User"
 @Entity("posts")
 export class Post extends BaseEntity{
 
-    @Field(() => Int)
+    @Field(() => String)
     @PrimaryGeneratedColumn("uuid")
-    id: number;
+    id: String;
     
     @Field(() => Date)
     @Column()
     timestamp: Date;
 
-    @Field()
+    @Field(() => String)
     @Column({type: "longtext"})
     content: String;
 
