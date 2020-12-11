@@ -1,11 +1,13 @@
 import Login from "./login";
 import Dashboard from "./dashboard"
 import Register from "./register"
+import CreatePost from "./create";
 const path = require("path")
-export default function Routes(app) {
+import express from "express";
+export default function Routes(app: express.Application) {
 
     // serve the landing page
-    app.get('/', (_, res) => {res.sendFile(path.resolve('views/landing.html'))})
+    app.get('/', (_: express.Request, res: express.Response) => {res.sendFile(path.resolve('views/landing.html'))})
 
     // login routes
     Login(app); 
@@ -16,6 +18,7 @@ export default function Routes(app) {
     // registration
     Register(app);
 
+    CreatePost(app);
 
-    app.get('/posts', (_, res) => {res.render('posts.ejs', {object: {"posts": ["1", "2", "3"], "timestamps":[4, 5, 6], "edits":["7", "8", "9"]}})})
+    app.get('/success', (_: express.Request, res:express.Response) => {res.sendFile(path.resolve('views/success.html'))})
 }
