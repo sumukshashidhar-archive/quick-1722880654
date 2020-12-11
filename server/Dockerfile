@@ -1,4 +1,4 @@
-FROM node:15.3.0-alpine3.10 AS builder
+FROM node:latest AS builder
 
 WORKDIR /usr/src/app
 
@@ -10,7 +10,7 @@ RUN npm ci --quiet && npm run build
 
 ### PRODUCTION
 
-FROM node:15.3.0-alpine3.10 AS prod 
+FROM node:latest AS prod 
 
 WORKDIR /app
 
