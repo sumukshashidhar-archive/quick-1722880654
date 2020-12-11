@@ -15,7 +15,7 @@ export default function CreatePost(app: express.Application) {
         })
     }), async (req: express.Request, res: express.Response) => {
         try {
-            const response = await PostController(req.body.content, req.cookies.authorization)
+            const response = await PostController(req.body.content, req.cookies.Authorization)
             if(response) {
                 res.redirect('/success')
             } else {
