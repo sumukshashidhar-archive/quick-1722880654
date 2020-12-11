@@ -12,10 +12,7 @@ mutation Login($email: String!, $password: String!) {
 
 const PostMaker = gql`
 mutation makePost($content: String!) {
-
-    makePost(content: $content) {
-
-    }
+    makePost(content: $content)
 }
 `
 
