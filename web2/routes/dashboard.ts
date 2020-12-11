@@ -1,9 +1,9 @@
 const isAuth = require('../controllers/middleware/isAuth')
 const postcon = require("./../controllers/posts")
+import express from "express";
+export default function Dashboard(app: express.Application) {
 
-export default function Dashboard(app) {
-
-    app.get('/dashboard', isAuth, async (req, res) => {
+    app.get('/dashboard', isAuth, async (req: express.Request, res: express.Response) => {
         try {
             const data = await postcon.getPosts(req.cookies["Authorization"])
             if (data.length == 0) {
@@ -20,7 +20,7 @@ export default function Dashboard(app) {
 
     })
 
-    app.get('/logout', async(_, res) => {
+    app.get('/logout', async(_: express.Request, res: express.Response) => {
         res.clearCookie('Authorization')
         res.redirect('/')
     })
