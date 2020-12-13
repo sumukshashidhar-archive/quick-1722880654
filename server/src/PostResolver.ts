@@ -10,14 +10,6 @@ import {isAuth} from "./isAuth";
 import {User} from "./entity/User";
 import {Post} from "./entity/Post";
 
-// functions
-function mysqlDate(){
-    /**
-     * Function for getting back MySQL timestamps to add to the database
-     */
-    const date = new Date();
-    return date.toISOString().split('T')[0];
-}
 
 // resolvers
 @Resolver()
@@ -36,7 +28,7 @@ export class PostResolver {
     @Query(() => [Post])
     @UseMiddleware(isAuth)
     async getPosts(@Ctx() { payload }: MyContext) {
-        return await Post.find({where: {user: payload!.userId}, order: {timestamp: "ASC"}})
+        return await Post.find({where: {user: payload!.userId}, order: {timestamp: "DESC"}})
     }
 
     /**
@@ -51,9 +43,8 @@ export class PostResolver {
         @Arg("content") content: string
     ) {
         try {
-
             await Post.insert({
-                timestamp: mysqlDate(),
+                timestamp: new Date().getTime(),
                 content: content,
                 user: await User.findOne({where: {id: payload!.userId}})
             })

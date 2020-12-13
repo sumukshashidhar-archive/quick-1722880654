@@ -10,9 +10,9 @@ export class Post extends BaseEntity{
     @PrimaryGeneratedColumn("uuid")
     id: String;
     
-    @Field(() => Date)
-    @Column()
-    timestamp: Date;
+    @Field(() => Number)
+    @Column({type: "bigint"})
+    timestamp: Number;
 
     @Field(() => String)
     @Column({type: "longtext"})
