@@ -12,6 +12,13 @@ function prepareLinks(data: [any]) {
     return linkarray
 }
 
+function timeStampToReadable(data: [any]) {
+    for(let i=0; i < data.length; i++) {
+        data[i]["timestamp"] = new Date(data[i]["timestamp"]).toUTCString()
+    }
+    return data
+}
+
 
 module.exports = {
     getPosts: async (token: any) => {
@@ -20,7 +27,7 @@ module.exports = {
                 const data = await new GraphQLClient(process.env.ENDPOINT!, {headers: {authorization: token}})
                             .request(queries.getPosts)
                 resolve({
-                    data: data.getPosts, 
+                    data: timeStampToReadable(data.getPosts), 
                     links: prepareLinks(data.getPosts)
                 })
             } catch (e) {
